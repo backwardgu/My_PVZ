@@ -1,0 +1,19 @@
+#include "timer.h"
+Timer::Timer()
+{
+	last = GetTickCount();
+}
+DWORD Timer::delta() const
+{
+	return GetTickCount() - last;
+}
+
+// ÷ÿ÷√º∆ ±∆˜
+void Timer::reset() {
+	last = GetTickCount();
+}
+void Timer::set(int time)
+{
+	last = GetTickCount();
+	last -= time;
+}
